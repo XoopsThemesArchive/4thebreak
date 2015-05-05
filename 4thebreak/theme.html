@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body>
+<div align="center"><center>
+<table border="0" width="95%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%" background="<{$xoops_imageurl}>bg.gif" align="left"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>logo.jpg" alt="Welcome to <{$xoops_sitename}>"></a></td>
+  </tr>
+</table>
+</center></div><div align="center"><center>
+
+<table border="0" width="95%" cellspacing="0" cellpadding="0" background="<{$xoops_imageurl}>mnuBG.gif">
+  <tr>
+    <td width="30%"></td>
+    <td width="85"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>home.jpg" width="85" height="30" alt="Home"></a></td>
+    <td width="85"><a href="<{$xoops_url}>/user.php"><img src="<{$xoops_imageurl}>account.jpg" width="85" height="30" alt="Your Account"></a></td>
+    <td width="85"><a href="<{$xoops_url}>/modules/mydownloads/"><img src="<{$xoops_imageurl}>files.jpg" width="85" height="30" alt="Downloads"></a></td>
+    <td width="85"><a href="<{$xoops_url}>/modules/newbb/"><img src="<{$xoops_imageurl}>forums.jpg" width="85" height="30" alt="Forums"></a></td>
+    <td width="85"><a href="<{$xoops_url}>/search.php"><img src="<{$xoops_imageurl}>search.jpg" width="85" height="30" alt="Search Site"></a></td>
+    <td width="30%"></td>
+  </tr>
+</table>
+</center></div><div align="center"><center>
+
+<table border="0" width="95%" cellspacing="0" cellpadding="0" background="<{$xoops_imageurl}>bg.gif">
+  <tr>
+    <td width="20%"><small><font color="#00ff00"><script>
+
+if (document.all)
+var version=/MSIE \d+.\d+/
+
+if (!document.all)
+document.write("You are using "+navigator.appName+" "+navigator.userAgent)
+else
+document.write("You are using "+navigator.appName+" "+navigator.appVersion.match(version))
+
+</script></small></font></td>
+    <td width="60%"><p align="center"><{$xoops_banner}></td>
+    <td width="20%" valign="middle"><br><font color="ffffff"><script>
+
+var mydate=new Date()
+var year=mydate.getYear()
+if (year < 1000)
+year+=1900
+var day=mydate.getDay()
+var month=mydate.getMonth()
+var daym=mydate.getDate()
+if (daym<10)
+daym="0"+daym
+var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+document.write("<small><font color='ffffff' face='Arial'><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>")
+
+</script></td>
+  </tr>
+</table>
+</center></div>
+<div align="center"><center>
+  <table cellspacing="0" width="95%" bgcolor="#5D695D">
+    <tr>
+      <td id="leftcolumn">
+        <!-- Start left blocks loop -->
+        <{foreach item=block from=$xoops_lblocks}>
+          <{include file="4thebreak/theme_blockleft.html"}>
+        <{/foreach}>
+        <!-- End left blocks loop -->
+
+      </td>
+
+      <td id="centercolumn">
+
+        <!-- Display center blocks if any -->
+        <{if $xoops_showcblock == 1}>
+
+        <table cellspacing="0">
+          <tr>
+            <td id="centerCcolumn" colspan="2">
+
+            <!-- Start center-center blocks loop -->
+            <{foreach item=block from=$xoops_ccblocks}>
+              <{include file="4thebreak/theme_blockcenter_c.html"}>
+            <{/foreach}>
+            <!-- End center-center blocks loop -->
+
+            </td>
+          </tr>
+          <tr>
+            <td id="centerLcolumn">
+
+            <!-- Start center-left blocks loop -->
+              <{foreach item=block from=$xoops_clblocks}>
+                <{include file="4thebreak/theme_blockcenter_l.html"}>
+              <{/foreach}>
+            <!-- End center-left blocks loop -->
+
+            </td><td id="centerRcolumn">
+
+            <!-- Start center-right blocks loop -->
+              <{foreach item=block from=$xoops_crblocks}>
+                <{include file="4thebreak/theme_blockcenter_r.html"}>
+              <{/foreach}>
+            <!-- End center-right blocks loop -->
+
+            </td>
+          </tr>
+        </table>
+
+        <{/if}>
+        <!-- End display center blocks -->
+
+        <div id="content">
+          <{$xoops_contents}>
+        </div>
+      </td>
+
+      <{if $xoops_showrblock == 1}>
+
+      <td id="rightcolumn">
+        <!-- Start right blocks loop -->
+        <{foreach item=block from=$xoops_rblocks}>
+          <{include file="4thebreak/theme_blockright.html"}>
+        <{/foreach}>
+        <!-- End right blocks loop -->
+      </td>
+
+      <{/if}>
+
+    </tr>
+  </table>
+  <div align="center"><center>
+
+<table border="0" width="95%" cellspacing="0" cellpadding="0" style="border-top: 1px solid rgb(45,43,32); border-bottom: 1px solid rgb(93,105,93)">
+  <tr>
+    <td id="thefort" width="10%" bgcolor="#5D695D" valign="middle"><p align="center"><a href="http://www.xoops.org/">Xoops<br>Powered</a></td>
+    <td id="footerbar" width="80%"><p align="center">Copyright: <{$xoops_meta_copyright}> By <{$xoops_sitename}><br>All trademarks used are properties of their respective owners. All rights reserved.</td>
+    <td id="thefort" width="10%" bgcolor="#5D695D"><p align="center"><a href="http://www.4thefort.com/">Themes By<br>4thefort</a></td>
+  </tr>
+</table>
+</center></div>
+<br>
+</body>
+</html>
